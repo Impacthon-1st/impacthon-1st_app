@@ -16,7 +16,7 @@ const useModal = ({title, content, onConfirm, onCancel}: ModalProps) => {
   return {
     open: () => setVisible(true),
     Modal: () =>
-      visible && (
+      visible ? (
         <Modal
           title={title}
           content={content}
@@ -29,7 +29,7 @@ const useModal = ({title, content, onConfirm, onCancel}: ModalProps) => {
             setVisible(false);
           }}
         />
-      ),
+      ) : null,
   };
 };
 
