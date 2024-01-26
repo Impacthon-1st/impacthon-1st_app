@@ -13,8 +13,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-impacthon_1st_app-impacthon_1st_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-impacthon_1st_app-impacthon_1st_appTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		79604EEF45354B7B89329A13 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C8D852B3FF44C396DE5FA6 /* PretendardVariable.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,7 @@
 		00E356EE1AD99517003FC87E /* impacthon_1st_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = impacthon_1st_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* impacthon_1st_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = impacthon_1st_appTests.m; sourceTree = "<group>"; };
+		10C8D852B3FF44C396DE5FA6 /* PretendardVariable.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = PretendardVariable.ttf; path = ../src/assets/fonts/PretendardVariable.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* impacthon_1st_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = impacthon_1st_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = impacthon_1st_app/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = impacthon_1st_app/AppDelegate.mm; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = impacthon_1st_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-impacthon_1st_app-impacthon_1st_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-impacthon_1st_app-impacthon_1st_appTests.release.xcconfig"; path = "Target Support Files/Pods-impacthon_1st_app-impacthon_1st_appTests/Pods-impacthon_1st_app-impacthon_1st_appTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		10C8D852B3FF44C396DE5FA6 /* PretendardVariable.ttf */ = {isa = PBXFileReference; name = "PretendardVariable.ttf"; path = "../src/assets/fonts/PretendardVariable.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +108,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4450652D32E44FD8B689FA6C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10C8D852B3FF44C396DE5FA6 /* PretendardVariable.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,15 +159,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		4450652D32E44FD8B689FA6C /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				10C8D852B3FF44C396DE5FA6 /* PretendardVariable.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
