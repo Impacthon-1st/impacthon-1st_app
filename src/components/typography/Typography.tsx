@@ -18,13 +18,13 @@ export const Headline = styled(base)`
 `;
 
 export const Body = styled(base)<{$emphasized?: boolean}>`
-  font-weight: ${props => (props.$emphasized ? 600 : 500)}
+  font-weight: ${props => (props.$emphasized ? 600 : 500)};
   font-size: 16px;
-    line-height: 26px;
+  line-height: 26px;
 `;
 
 export const Content = styled(base)<{$emphasized?: boolean}>`
-  font-weight: ${props => (props.$emphasized ? 600 : 500)}
+  font-weight: ${props => (props.$emphasized ? 600 : 500)};
   font-size: 14px;
   line-height: 20px;
 `;
