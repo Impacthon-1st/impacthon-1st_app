@@ -10,7 +10,10 @@ const App = () => {
   const theme = useColorScheme();
   const palette = theme === 'dark' ? dark : light;
   return (
-    <ThemeProvider theme={palette}>
+    <ThemeProvider
+      theme={{
+        colors: palette,
+      }}>
       <NavigationContainer>
         <RootNavigation />
       </NavigationContainer>
