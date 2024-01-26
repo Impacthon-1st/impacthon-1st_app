@@ -1,5 +1,6 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
+  "allowImportingTsExtensions": false,
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
@@ -12,8 +13,8 @@
       "@screens/*": [
         "./src/screens/*"
       ],
-      "@navigation/*": [
-        "./src/navigation/*"
+      "@navigation": [
+        "./src/navigation",
       ],
       "@lib/*": [
         "./src/lib/*"
