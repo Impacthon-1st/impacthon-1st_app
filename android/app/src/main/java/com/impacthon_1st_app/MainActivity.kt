@@ -1,11 +1,19 @@
 package com.impacthon_1st_app
 
+import android.os.Bundle
+import android.os.PersistableBundle
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
+import com.facebook.react.common.assets.ReactFontManager
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 
 class MainActivity : ReactActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(null)
+        ReactFontManager.getInstance().addCustomFont(this, "Pretendard Variable", R.font.pretendard)
+    }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
