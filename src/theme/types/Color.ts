@@ -1,7 +1,7 @@
 interface Color {
   default: string;
   solid: string;
-  enabled: string;
+  active: string;
 }
 
 export default Color;
