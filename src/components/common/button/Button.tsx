@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled, {useTheme} from 'styled-components/native';
-import {Typography} from '@components/typography';
+import Typography from '@components/typography';
 import Color from '@theme/types/Color';
 
 interface ButtonProps {
