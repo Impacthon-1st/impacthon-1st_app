@@ -9,6 +9,7 @@
   self.moduleName = @"impacthon_1st_app";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
+  [GMSServices provideAPIKey:@"AIzaSyDaEmHG0Kqybd1LeLXigxyi2cePkMhkF-A"]; // add this line using the api key obtained from Google Console
   self.initialProps = @{};
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
