@@ -39,11 +39,13 @@ const Dropdown = ({
         )}
         <Container onPress={() => setOpen(!open)} $focused={open}>
           {value.length === 0 ? (
-            <Typography.Body $color={colors.gray.disabled}>
+            <Typography.Content $color={colors.gray.disabled}>
               {placeholder}
-            </Typography.Body>
+            </Typography.Content>
           ) : (
-            <Typography.Body $color={colors.gray.body}>{value}</Typography.Body>
+            <Typography.Content $color={colors.gray.body}>
+              {value}
+            </Typography.Content>
           )}
           <DownIcon
             fill={colors.gray.disabled}
