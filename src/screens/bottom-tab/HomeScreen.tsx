@@ -46,12 +46,6 @@ const HomeScreen = () => {
 
 export default HomeScreen;
 
-const Container = styled.View`
-  width: 100%;
-  height: 100%;
-  padding: 0 20px;
-`;
-
 const ProfileIcon = styled.Image<{width: number; height: number}>`
   width: ${({width}) => width}px;
   height: ${({height}) => height}px;
