@@ -2,7 +2,7 @@ import {AuthNavigation, BottomNavigation} from '@navigation';
 import {createStackNavigator} from '@react-navigation/stack';
 import TestScreen from '@screens/TestScreen';
 import React from 'react';
-import PotRoundupNavigation from './PotRoundupNavigation';
+import PodRoundupNavigation from './PodRoundupNavigation';
 
 const Stack = createStackNavigator();
 
@@ -36,7 +36,7 @@ const RootNavigation = () => {
       />
       <Stack.Screen
         name={'PotRoundup'}
-        component={PotRoundupNavigation}
+        component={PodRoundupNavigation}
         options={{gestureEnabled: false}}
       />
     </Stack.Navigator>
