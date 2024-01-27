@@ -1,4 +1,4 @@
-import {AuthNavigation, BottomNavigation} from '@navigation';
+import {AuthNavigation} from '@navigation';
 import {createStackNavigator} from '@react-navigation/stack';
 import TestScreen from '@screens/TestScreen';
 import React from 'react';
@@ -19,13 +19,6 @@ const RootNavigation = () => {
       <Stack.Screen
         name={'Main'}
         component={MainScreen}
-        options={{
-          gestureEnabled: false,
-        }}
-      />
-      <Stack.Screen
-        name={'Tab'}
-        component={BottomNavigation}
         options={{
           gestureEnabled: false,
         }}
