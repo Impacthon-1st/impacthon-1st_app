@@ -4,13 +4,14 @@ import TestScreen from '@screens/TestScreen';
 import React from 'react';
 import PodRoundupNavigation from './PodRoundupNavigation';
 import MapScreen from '@screens/MapScreen.tsx';
+import CreatePodScreen from '@screens/pod/CreatePodScreen.tsx';
 
 const Stack = createStackNavigator();
 
 const RootNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'Tab'}
+      initialRouteName={'CreatePodScreen'}
       screenOptions={{
         headerShown: false,
       }}>
@@ -41,6 +42,7 @@ const RootNavigation = () => {
         options={{gestureEnabled: false}}
       />
       <Stack.Screen name={'MapScreen'} component={MapScreen} />
+      <Stack.Screen name={'CreatePodScreen'} component={CreatePodScreen} />
     </Stack.Navigator>
   );
 };
