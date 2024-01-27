@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import TestScreen from '@screens/TestScreen';
 import React from 'react';
 import PodRoundupNavigation from './PodRoundupNavigation';
+import MapScreen from '@screens/MapScreen.tsx';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,7 @@ const RootNavigation = () => {
         component={PodRoundupNavigation}
         options={{gestureEnabled: false}}
       />
+      <Stack.Screen name={'MapScreen'} component={MapScreen} />
     </Stack.Navigator>
   );
 };

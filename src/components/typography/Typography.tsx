@@ -13,7 +13,7 @@ export const Title = styled(base)`
 
 export const Headline = styled(base)`
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 28px;
 `;
 
