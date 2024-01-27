@@ -5,8 +5,8 @@ declare module '*.svg' {
   export default content;
 }
 
-import 'styled-components/native';
 import Palette from '@theme/types/Palette';
+import 'styled-components/native';
 
 declare module 'styled-components/native' {
   export interface DefaultTheme {
