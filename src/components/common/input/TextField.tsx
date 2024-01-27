@@ -26,6 +26,9 @@ const TextField = ({
   description,
   value,
   onChange,
+  isSecure,
+  inputMode,
+  disabled,
 }: TextFieldProps) => {
   const theme = useTheme();
   const textStyles = Typography.Content.inlineStyle.generateStyleObject({
@@ -45,13 +48,17 @@ const TextField = ({
           </Row>
         )}
         <InputContainer
+          style={{...textStyles, lineHeight: undefined}}
           $focused={focused}
           placeholder={placeholder}
           placeholderTextColor={theme.colors.gray.disabled}
           value={value}
           onChangeText={onChange}
+          secureTextEntry={isSecure}
+          inputMode={inputMode}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
+          editable={!disabled}
         />
         {description && (
           <Typography.Caption $color={theme.colors.gray.disabled}>
@@ -66,6 +73,8 @@ const TextField = ({
 const Wrapper = styled.View`
   width: 100%;
   padding: 8px 20px;
+  //position: relative;
+  //z-index: -1;
 `;
 
 const Container = styled.View`
