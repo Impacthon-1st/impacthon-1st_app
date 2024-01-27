@@ -2,11 +2,11 @@ import React from 'react';
 import styled, {useTheme} from 'styled-components/native';
 import {Pressable} from '@components/custom';
 import Typography from '@components/typography';
-import IconProps from '@components/icons/types/IconProps.ts';
+import FillProps from '@components/icons/types/FillProps.ts';
 
 interface CategoryCardProps {
   category: string;
-  Icon: React.FC<IconProps>;
+  Icon: React.FC<FillProps>;
   selected?: boolean;
   onPress?: () => void;
 }
