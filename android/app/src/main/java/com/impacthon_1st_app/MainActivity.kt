@@ -12,7 +12,6 @@ class MainActivity : ReactActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(null)
-        ReactFontManager.getInstance().addCustomFont(this, "Pretendard Variable", R.font.pretendard)
     }
 
   /**

@@ -9,6 +9,8 @@ import React, {useEffect} from 'react';
 import {useTheme} from 'styled-components/native';
 import PodRoundupNavigation from './PodRoundupNavigation';
 
+import TripScreen from '@screens/bottom-tab/TripScreen.tsx';
+
 const Tab = createBottomTabNavigator();
 
 const BottomNavigation = () => {
@@ -37,7 +39,7 @@ const BottomNavigation = () => {
       />
       <Tab.Screen
         name="Trip"
-        component={TestScreen}
+        component={TripScreen}
         options={{
           tabBarLabel: '여행',
           tabBarIcon: ({focused}) => <TripIcon selected={focused} />,
