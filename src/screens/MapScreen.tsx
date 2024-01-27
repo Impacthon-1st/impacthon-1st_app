@@ -18,7 +18,8 @@ const MapScreen = () => {
             longitudeDelta: 0.0121,
           }}
           provider={PROVIDER_GOOGLE}
-          showsUserLocation={true}>
+          showsUserLocation={true}
+          onPoiClick={e => console.log(e.nativeEvent)}>
           {/*<Marker*/}
           {/*  coordinate={{latitude: 37.78825, longitude: -122.4324}}*/}
           {/*  title="this is a marker"*/}
