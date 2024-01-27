@@ -19,13 +19,7 @@ const MapScreen = () => {
           }}
           provider={PROVIDER_GOOGLE}
           showsUserLocation={true}
-          onPoiClick={e => console.log(e.nativeEvent)}>
-          {/*<Marker*/}
-          {/*  coordinate={{latitude: 37.78825, longitude: -122.4324}}*/}
-          {/*  title="this is a marker"*/}
-          {/*  description="this is a marker example"*/}
-          {/*/>*/}
-        </MapView>
+          onPoiClick={e => console.log(e.nativeEvent)}></MapView>
       )}
       <PlusButton />
     </View>

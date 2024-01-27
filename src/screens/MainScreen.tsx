@@ -4,7 +4,7 @@ import {convertDateToProgressGauge} from '@lib/utils/convertDateToProgressGauge.
 import BottomSheetScreen from '@screens/BottomSheetScreen.tsx';
 import MapScreen from '@screens/MapScreen.tsx';
 import React from 'react';
-import PodRoundupNavigation from 'src/navigation/PodRoundupNavigation';
+import PodRoundupNavigation from '../navigation/PodRoundupNavigation.tsx';
 import styled, {useTheme} from 'styled-components/native';
 
 const MainScreen = () => {
