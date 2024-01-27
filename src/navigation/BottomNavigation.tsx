@@ -7,6 +7,7 @@ import {BottomTabBar} from '@components/layout';
 import {HomeIcon, TripIcon, PersonIcon} from '@components/icons/bottom-tab';
 import MenuIcon from '@components/icons/bottom-tab/MenuIcon.tsx';
 import {HomeScreen} from '@screens/bottom-tab';
+import TripScreen from '@screens/bottom-tab/TripScreen.tsx';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +37,7 @@ const BottomNavigation = () => {
       />
       <Tab.Screen
         name="Trip"
-        component={TestScreen}
+        component={TripScreen}
         options={{
           tabBarLabel: '여행',
           tabBarIcon: ({focused}) => <TripIcon selected={focused} />,

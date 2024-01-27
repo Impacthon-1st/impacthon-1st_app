@@ -48,7 +48,7 @@ const TabItemContainer = styled.Pressable`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4px 0;
+  padding: 6px 0;
 `;
 
 export default BottomTabBar;
