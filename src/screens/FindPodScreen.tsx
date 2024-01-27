@@ -140,6 +140,8 @@ const Item = styled.View`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  border-bottom-width: 1;
+  border-color: ${({theme}) => theme.colors.gray.solid};
 `;
 
 const Profile = styled.Image`
