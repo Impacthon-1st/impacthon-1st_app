@@ -125,7 +125,7 @@ const Item = styled.View`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border-bottom-width: 1;
+  border-bottom-width: 1px;
   border-color: ${({theme}) => theme.colors.gray.solid};
 `;
 
