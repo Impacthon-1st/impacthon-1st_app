@@ -1,5 +1,6 @@
-import {AuthNavigation, BottomNavigation} from '@navigation';
+import {AuthNavigation} from '@navigation';
 import {createStackNavigator} from '@react-navigation/stack';
+import MainScreen from '@screens/MainScreen.tsx';
 import MapScreen from '@screens/MapScreen.tsx';
 import TestScreen from '@screens/TestScreen';
 import CreatePodScreen from '@screens/pod/CreatePodScreen.tsx';
@@ -11,13 +12,13 @@ const Stack = createStackNavigator();
 const RootNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'PotRoundup'}
+      initialRouteName={'Main'}
       screenOptions={{
         headerShown: false,
       }}>
       <Stack.Screen
-        name={'Tab'}
-        component={BottomNavigation}
+        name={'Main'}
+        component={MainScreen}
         options={{
           gestureEnabled: false,
         }}

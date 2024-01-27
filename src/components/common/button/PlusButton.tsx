@@ -1,11 +1,24 @@
 import React from 'react';
 import {SvgXml} from 'react-native-svg';
 import styled, {useTheme} from 'styled-components/native';
+import {Pressable} from '@components/custom';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const PlusButton = () => {
   const {colors} = useTheme();
+  const {bottom} = useSafeAreaInsets();
   return (
-    <StyledPressable backgroundColor={colors.primary.default}>
+    <StyledPressable
+      style={[
+        {
+          bottom: bottom + 80,
+        },
+      ]}
+      color={{
+        active: colors.primary.active,
+        default: colors.primary.default,
+        disabled: '',
+      }}>
       <SvgXml
         xml={`
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -24,8 +37,7 @@ const PlusButton = () => {
 
 export default PlusButton;
 
-const StyledPressable = styled.Pressable<{backgroundColor: string}>`
-  background-color: ${({backgroundColor}) => backgroundColor};
+const StyledPressable = styled(Pressable)`
   width: 48px;
   height: 48px;
   border-radius: 999px;
@@ -33,6 +45,5 @@ const StyledPressable = styled.Pressable<{backgroundColor: string}>`
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 23px;
   right: 20px;
 `;
