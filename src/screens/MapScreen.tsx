@@ -1,8 +1,8 @@
-import React from 'react';
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
-import {View} from 'react-native';
-import useLocation from '@hooks/useLocation.tsx';
 import PlusButton from '@components/common/button/PlusButton.tsx';
+import useLocation from '@hooks/useLocation.tsx';
+import React from 'react';
+import {View} from 'react-native';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 const MapScreen = () => {
   const location = useLocation();
