@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {SafeAreaView} from '@components/custom';
 import Switch from '@components/common/input/Switch.tsx';
 import Button from '@components/common/button/Button.tsx';
-import {useTheme} from 'styled-components/native';
+// import {useTheme} from 'styled-components/native';
 import Header from '@components/layout/Header.tsx';
 import useModal from '@hooks/useModal.tsx';
 import {DoubleCTA, SingleCTA} from '@components/common/button/cta';
@@ -14,7 +14,7 @@ import {TogetherIcon} from '@components/icons/category';
 const TestScreen = () => {
   const [enabled, setEnabled] = useState(false);
   const [value, setValue] = useState('');
-  const {colors} = useTheme();
+  // const {colors} = useTheme();
   const {Modal, open} = useModal({
     title: 'asdsssf',
     content: 'asdf',
