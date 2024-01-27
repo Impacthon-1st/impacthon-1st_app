@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import styled, {useTheme} from 'styled-components/native';
 import {PressableProps} from 'react-native';
+import styled, {useTheme} from 'styled-components/native';
 
 interface Color {
   default: string;
