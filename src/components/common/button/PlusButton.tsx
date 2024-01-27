@@ -45,5 +45,6 @@ const StyledPressable = styled(Pressable)`
   align-items: center;
   justify-content: center;
   position: absolute;
+  z-index: 0;
   right: 20px;
 `;

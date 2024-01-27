@@ -4,7 +4,7 @@ import {convertDateToProgressGauge} from '@lib/utils/convertDateToProgressGauge.
 import BottomSheetScreen from '@screens/BottomSheetScreen.tsx';
 import MapScreen from '@screens/MapScreen.tsx';
 import React from 'react';
-import PodRoundupNavigation from 'src/navigation/PodRoundupNavigation';
+import PodRoundupNavigation from '../navigation/PodRoundupNavigation.tsx';
 import styled, {useTheme} from 'styled-components/native';
 
 const MainScreen = () => {
@@ -51,7 +51,6 @@ const ProfileIcon = styled.Image<{width: number; height: number}>`
   width: ${({width}) => width}px;
   height: ${({height}) => height}px;
   border-radius: 999px;
-  border: ${({theme}) => theme.colors.gray.subSolid};
 `;
 
 const StatusBox = styled.View`

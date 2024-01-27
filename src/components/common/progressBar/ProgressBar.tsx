@@ -47,7 +47,7 @@ const Container = styled.View`
 const ProgressGage = styled(Animated.View)`
   height: 100%;
   background-color: ${({theme}) => theme.colors.red.default};
-  position: absolute;
+  position: absolutess;
   top: 0;
   left: 0;
 `;
