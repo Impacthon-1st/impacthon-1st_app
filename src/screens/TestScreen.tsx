@@ -8,6 +8,8 @@ import useModal from '@hooks/useModal.tsx';
 import {DoubleCTA, SingleCTA} from '@components/common/button/cta';
 import {Spacer, Text} from '@components/atomic';
 import {TextField} from '@components/common/input';
+import CategoryCard from '@components/common/CategoryCard.tsx';
+import {TogetherIcon} from '@components/icons/category';
 
 const TestScreen = () => {
   const [enabled, setEnabled] = useState(false);
@@ -29,6 +31,7 @@ const TestScreen = () => {
             console.log('asdf');
           }}
         />
+        <CategoryCard category={'asdf'} Icon={TogetherIcon} selected={true} />
         <Button
           onPress={() => {
             open();
