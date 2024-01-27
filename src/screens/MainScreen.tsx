@@ -1,9 +1,10 @@
-import React from 'react';
-import BottomSheetScreen from '@screens/BottomSheetScreen.tsx';
-import MapScreen from '@screens/MapScreen.tsx';
 import {Column, Row, Text, Wrapper} from '@components/atomic';
 import ProgressBar from '@components/common/progressBar/ProgressBar.tsx';
 import {convertDateToProgressGauge} from '@lib/utils/convertDateToProgressGauge.ts';
+import BottomSheetScreen from '@screens/BottomSheetScreen.tsx';
+import MapScreen from '@screens/MapScreen.tsx';
+import React from 'react';
+import PodRoundupNavigation from 'src/navigation/PodRoundupNavigation';
 import styled, {useTheme} from 'styled-components/native';
 
 const MainScreen = () => {
@@ -40,6 +41,7 @@ const MainScreen = () => {
             </Row>
           </StatusBox>
         </Wrapper>
+        <PodRoundupNavigation />
       </BottomSheetScreen>
     </>
   );

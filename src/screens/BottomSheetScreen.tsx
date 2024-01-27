@@ -1,13 +1,13 @@
+import {Column, Wrapper} from '@components/atomic';
 import React, {useEffect, useRef, useState} from 'react';
 import {Animated, useWindowDimensions} from 'react-native';
-import styled from 'styled-components/native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {Column, Wrapper} from '@components/atomic';
 import {
   Directions,
   FlingGestureHandler,
   State,
 } from 'react-native-gesture-handler';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import styled from 'styled-components/native';
 
 interface Props {
   children?: React.ReactNode;
