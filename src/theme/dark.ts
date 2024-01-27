@@ -11,12 +11,13 @@ const dark: Palette = {
     background: '#0E0F10',
   },
   primary: {
-    default: '#2B5FFD',
-    active: '#0234CA',
+    default: '#F3483F',
+    active: '#F56D66',
+    disabled: '#FCD1CF',
   },
   secondary: {
-    default: '#F2F4F6',
-    active: '#BDC7D1',
+    default: '#080A0C',
+    active: '#202027',
   },
   red: red.dark,
   orange: orange.dark,

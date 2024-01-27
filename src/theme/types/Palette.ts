@@ -12,6 +12,7 @@ interface Palette {
   primary: {
     default: string;
     active: string;
+    disabled: string;
   };
   secondary: {
     default: string;

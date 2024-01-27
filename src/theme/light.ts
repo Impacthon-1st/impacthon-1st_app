@@ -11,12 +11,13 @@ const light: Palette = {
     background: '#FFFFFF',
   },
   primary: {
-    default: '#2B5FFD',
-    active: '#0234CA',
+    default: '#F3483F',
+    active: '#F56D66',
+    disabled: '#F56D66',
   },
   secondary: {
     default: '#F2F4F6',
-    active: '#BDC7D1',
+    active: '#F9FAFA',
   },
   red: red.light,
   orange: orange.light,
