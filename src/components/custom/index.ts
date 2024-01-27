@@ -1,4 +1,4 @@
-import SafeArea from './SafeArea';
+import SafeAreaView from './SafeAreaView.tsx';
 import Pressable from './Pressable';
 
-export {SafeArea, Pressable};
+export {SafeAreaView, Pressable};
