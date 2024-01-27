@@ -22,10 +22,6 @@ const HomeScreen = () => {
               <Row $gap={4} $alignItems="center">
                 <Text $size={14} $color={colors.gray.disabled} $lineHeight={20}>
                   판교 구름스퀘어
-                  {convertDateToProgressGauge(
-                    '2024-01-27T01:00:00',
-                    '2024-01-29T11:00:00',
-                  )}
                 </Text>
               </Row>
             </Column>
