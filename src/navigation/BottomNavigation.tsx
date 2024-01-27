@@ -28,7 +28,8 @@ const BottomNavigation = () => {
         headerShown: false,
         tabBarActiveTintColor: colors.gray.body,
         tabBarInactiveTintColor: colors.gray.disabled,
-      }}>
+      }}
+      initialRouteName="Pod">
       <Tab.Screen
         name="Home"
         component={HomeScreen}

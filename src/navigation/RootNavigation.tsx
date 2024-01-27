@@ -1,17 +1,17 @@
 import {AuthNavigation, BottomNavigation} from '@navigation';
 import {createStackNavigator} from '@react-navigation/stack';
+import MapScreen from '@screens/MapScreen.tsx';
 import TestScreen from '@screens/TestScreen';
+import CreatePodScreen from '@screens/pod/CreatePodScreen.tsx';
 import React from 'react';
 import PodRoundupNavigation from './PodRoundupNavigation';
-import MapScreen from '@screens/MapScreen.tsx';
-import CreatePodScreen from '@screens/pod/CreatePodScreen.tsx';
 
 const Stack = createStackNavigator();
 
 const RootNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'CreatePodScreen'}
+      initialRouteName={'PotRoundup'}
       screenOptions={{
         headerShown: false,
       }}>
