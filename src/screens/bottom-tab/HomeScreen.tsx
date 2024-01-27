@@ -6,7 +6,7 @@ import styled, {useTheme} from 'styled-components/native';
 // import notification_icon from '@assets/icons/notification_icon.svg';
 // import leftArrow_icon from '@assets/icons/leftArrow_icon.svg';
 import ProgressBar from '@components/common/progressBar/ProgressBar';
-import {convertDateToProgressGauge} from '@lib/utils/progressBar/convertDateToProgressGauge';
+// import {convertDateToProgressGauge} from '@lib/utils/progressBar/convertDateToProgressGauge';
 
 const HomeScreen = () => {
   const {colors} = useTheme();
@@ -42,12 +42,7 @@ const HomeScreen = () => {
           </Column>
 
           <Row $padding={[16, 0]} $alignItems="center">
-            <ProgressBar
-              gauge={convertDateToProgressGauge(
-                '2024-01-26T20:00:00',
-                '2024-01-28T21:30:00',
-              )}
-            />
+            <ProgressBar gauge={30} />
           </Row>
         </StatusBox>
       </Contaienr>
