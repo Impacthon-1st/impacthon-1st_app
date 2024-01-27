@@ -5,6 +5,7 @@ import {Header} from '@components/layout';
 import PotRoundupHeader from '@components/layout/PodRoundupHeader';
 import React from 'react';
 import styled from 'styled-components/native';
+import usePodRequests from '@hooks/usePodRequests.tsx';
 
 const REQUEST_PODS_ITEMS = [
   {id: 0, profile: '', name: '박상현'},
@@ -13,13 +14,15 @@ const REQUEST_PODS_ITEMS = [
 ];
 
 const RequestPodScreen = () => {
+  const {podRequests} = usePodRequests();
+  console.log(podRequests);
   return (
     <SafeAreaView>
       <Header title="팟모집" />
       <PotRoundupHeader />
       <Container>
         {REQUEST_PODS_ITEMS.map(item => (
-          <RequestPodItem {...item} />
+          <RequestPodItem key={item.id} {...item} />
         ))}
       </Container>
       <PlusButton />

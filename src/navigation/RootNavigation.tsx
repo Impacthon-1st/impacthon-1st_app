@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 const RootNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'Main'}
+      initialRouteName={'Auth'}
       screenOptions={{
         headerShown: false,
       }}>
