@@ -5,16 +5,24 @@ import React from 'react';
 import PodRoundupNavigation from './PodRoundupNavigation';
 import MapScreen from '@screens/MapScreen.tsx';
 import CreatePodScreen from '@screens/pod/CreatePodScreen.tsx';
+import MainScreen from '@screens/MainScreen.tsx';
 
 const Stack = createStackNavigator();
 
 const RootNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'CreatePodScreen'}
+      initialRouteName={'Main'}
       screenOptions={{
         headerShown: false,
       }}>
+      <Stack.Screen
+        name={'Main'}
+        component={MainScreen}
+        options={{
+          gestureEnabled: false,
+        }}
+      />
       <Stack.Screen
         name={'Tab'}
         component={BottomNavigation}
