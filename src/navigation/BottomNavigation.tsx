@@ -6,6 +6,7 @@ import {useTheme} from 'styled-components/native';
 import {BottomTabBar} from '@components/layout';
 import {HomeIcon, TripIcon, PersonIcon} from '@components/icons/bottom-tab';
 import MenuIcon from '@components/icons/bottom-tab/MenuIcon.tsx';
+import {HomeScreen} from '@screens/bottom-tab';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +28,7 @@ const BottomNavigation = () => {
       }}>
       <Tab.Screen
         name="Home"
-        component={TestScreen}
+        component={HomeScreen}
         options={{
           tabBarLabel: '홈',
           tabBarIcon: ({focused}) => <HomeIcon selected={focused} />,
