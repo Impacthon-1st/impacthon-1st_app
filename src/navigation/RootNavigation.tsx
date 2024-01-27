@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 const RootNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'PotRoundup'}
+      initialRouteName={'Tab'}
       screenOptions={{
         headerShown: false,
       }}>

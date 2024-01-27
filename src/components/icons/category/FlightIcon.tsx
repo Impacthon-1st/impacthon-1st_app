@@ -1,8 +1,8 @@
 import React from 'react';
 import {SvgXml} from 'react-native-svg';
-import Props from '@components/icons/types/Props.ts';
+import FillProps from '@components/icons/types/FillProps.ts';
 
-const FlightIcon = ({fill}: Props) => {
+const FlightIcon = ({fill}: FillProps) => {
   return (
     <SvgXml
       xml={`
