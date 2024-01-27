@@ -61,7 +61,7 @@ const Container = styled.ScrollView`
 const Item = styled.View`
   width: 100%;
   padding: 8px 20px;
-  border-bottom-width: 1;
+  border-bottom-width: 1px;
   border-color: ${({theme}) => theme.colors.gray.solid};
 `;
 

@@ -2,11 +2,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FindPodScreen from '@screens/FindPodScreen';
 import RequestPodScreen from '@screens/RequestPodScreen';
 import React from 'react';
+import {View} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const PodRoundupNavigation = () => {
   return (
+    // <View>
     <Tab.Navigator
       initialRouteName="RequestPod"
       screenOptions={{
@@ -16,6 +18,7 @@ const PodRoundupNavigation = () => {
       <Tab.Screen name="FindPod" component={FindPodScreen} />
       <Tab.Screen name="RequestPod" component={RequestPodScreen} />
     </Tab.Navigator>
+    // </View>
   );
 };
 

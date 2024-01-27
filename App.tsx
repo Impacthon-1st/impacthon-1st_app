@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const theme = useColorScheme();
-  const palette = theme === 'dark' ? dark : light;
+  const palette = /*theme === 'dark' ? dark : */ light;
   useEffect(() => {
     Geolocation.setRNConfiguration({
       authorizationLevel: 'whenInUse',

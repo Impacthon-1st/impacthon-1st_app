@@ -65,6 +65,7 @@ const Handle = styled.View`
 
 const Container = styled(Animated.View)`
   position: absolute;
+  z-index: 100;
   bottom: 0;
   border-radius: 24px 24px 0 0;
   background-color: ${props => props.theme.colors.gray.background};

@@ -51,7 +51,6 @@ const ProfileIcon = styled.Image<{width: number; height: number}>`
   width: ${({width}) => width}px;
   height: ${({height}) => height}px;
   border-radius: 999px;
-  border: ${({theme}) => theme.colors.gray.subSolid};
 `;
 
 const StatusBox = styled.View`
