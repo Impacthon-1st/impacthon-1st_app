@@ -14,7 +14,7 @@ const CTAButton = ({onPress, text, disabled}: SingleCTAProps) => {
   return (
     <Wrapper>
       <Container
-        onPress={() => onPress}
+        onPress={onPress}
         disabled={disabled}
         color={{
           default: colors.primary.default,
