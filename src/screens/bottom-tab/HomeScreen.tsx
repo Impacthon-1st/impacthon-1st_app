@@ -3,6 +3,7 @@ import {SafeAreaView} from '@components/custom';
 import React from 'react';
 import styled, {useTheme} from 'styled-components/native';
 import ProgressBar from '@components/common/progressBar/ProgressBar';
+import {convertDateToProgressGauge} from '@lib/utils/convertDateToProgressGauge';
 import {Header} from '@components/layout';
 
 const HomeScreen = () => {
@@ -21,12 +22,21 @@ const HomeScreen = () => {
               <Row $gap={4} $alignItems="center">
                 <Text $size={14} $color={colors.gray.disabled} $lineHeight={20}>
                   판교 구름스퀘어
+                  {convertDateToProgressGauge(
+                    '2024-01-27T01:00:00',
+                    '2024-01-29T11:00:00',
+                  )}
                 </Text>
               </Row>
             </Column>
           </Column>
           <Row $padding={[16, 0]} $alignItems="center">
-            <ProgressBar gauge={30} />
+            <ProgressBar
+              gauge={convertDateToProgressGauge(
+                '2024-01-27T01:00:00',
+                '2024-01-29T11:00:00',
+              )}
+            />
           </Row>
         </StatusBox>
       </Wrapper>
@@ -35,12 +45,6 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-const Container = styled.View`
-  width: 100%;
-  height: 100%;
-  padding: 0 20px;
-`;
 
 const ProfileIcon = styled.Image<{width: number; height: number}>`
   width: ${({width}) => width}px;
