@@ -1,14 +1,15 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
 import {AuthNavigation, BottomNavigation} from '@navigation';
+import {createStackNavigator} from '@react-navigation/stack';
 import TestScreen from '@screens/TestScreen';
+import React from 'react';
+import PotRoundupNavigation from './PotRoundupNavigation';
 
 const Stack = createStackNavigator();
 
 const RootNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'Auth'}
+      initialRouteName={'PotRoundup'}
       screenOptions={{
         headerShown: false,
       }}>
@@ -32,6 +33,11 @@ const RootNavigation = () => {
         options={{
           gestureEnabled: false,
         }}
+      />
+      <Stack.Screen
+        name={'PotRoundup'}
+        component={PotRoundupNavigation}
+        options={{gestureEnabled: false}}
       />
     </Stack.Navigator>
   );
