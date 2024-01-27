@@ -8,6 +8,7 @@ interface CategoryCardProps {
   category: string;
   Icon: React.FC<FillProps>;
   selected?: boolean;
+  big?: boolean;
   onPress?: () => void;
 }
 
@@ -16,11 +17,13 @@ const CategoryCard = ({
   Icon,
   onPress,
   selected,
+  big,
 }: CategoryCardProps) => {
   const {colors} = useTheme();
   return (
     <Container>
       <IconContainer
+        $big={big}
         onPress={onPress}
         color={
           selected
@@ -51,10 +54,10 @@ const Container = styled.View`
   align-items: center;
 `;
 
-const IconContainer = styled(Pressable)`
+const IconContainer = styled(Pressable)<{$big?: boolean}>`
   display: flex;
   border-radius: 24px;
-  padding: 24px;
+  padding: ${({$big}) => ($big ? '60px' : '24px')};
   flex-direction: column;
   align-items: center;
 `;
