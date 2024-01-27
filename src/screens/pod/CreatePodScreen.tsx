@@ -1,20 +1,20 @@
-import React, {useRef, useState} from 'react';
-import {Animated} from 'react-native';
+import {Row, Spacer, Wrapper} from '@components/atomic';
+import CategoryCard from '@components/common/CategoryCard.tsx';
+import {SingleCTA} from '@components/common/button/cta';
+import {TextField} from '@components/common/input';
+import {SafeAreaView} from '@components/custom';
+import {TablewareIcon} from '@components/icons/category';
 import {Header, Title} from '@components/layout';
 import {useNavigation} from '@react-navigation/native';
-import {Row, Spacer, Wrapper} from '@components/atomic';
-import styled from 'styled-components/native';
-import {SingleCTA} from '@components/common/button/cta';
-import {SafeAreaView} from '@components/custom';
-import CategoryCard from '@components/common/CategoryCard.tsx';
-import {TablewareIcon} from '@components/icons/category';
 import {atom, useAtom, useAtomValue} from 'jotai';
+import React, {useState} from 'react';
+import {Animated} from 'react-native';
+import styled from 'styled-components/native';
 
 const stepAtom = atom(1);
 
 const CreatePodScreen = () => {
-  const navigation = useNavigation<any>();
-  const [step, setStep] = useAtom(stepAtom);
+  const step = useAtomValue(stepAtom);
   return (
     <SafeAreaView>
       {step === 1 && <Step1 />}
@@ -45,19 +45,43 @@ const Step1 = () => {
 };
 
 const Step2 = () => {
-  const navigation = useNavigation<any>();
   const [step, setStep] = useAtom(stepAtom);
+  const [info, setInfo] = useState({
+    title: '',
+    location: '',
+    openChatURL: '',
+    description: '',
+  });
 
   return (
     <>
-      <Header shoBack onBack={() => navigation.pop()} />
+      <Header shoBack onBack={() => setStep(1)} />
       <ProgressBar current={step} max={3} />
-      <Title title={'팟의 주제를 알려주세요.'} />
-      <Row $padding={[0, 20]} $gap={16}>
-        <CategoryCard big category={'관광지 탐방'} Icon={TablewareIcon} />
-        <CategoryCard big category={'맛집 탐방'} Icon={TablewareIcon} />
-      </Row>
-
+      <Title title="팟의 기본 정보를 알려주세요." />
+      <TextField
+        label="제목"
+        value={info.title}
+        placeholder="제목을 입력해 주세요."
+        onChange={value => setInfo(prev => ({...prev, title: value}))}
+      />
+      <TextField
+        label="장소"
+        value={info.location}
+        placeholder="장소 찾기"
+        onChange={value => setInfo(prev => ({...prev, location: value}))}
+      />
+      <TextField
+        label="오픈 채팅방 URL"
+        value={info.openChatURL}
+        placeholder="https://www.instagram.com/"
+        onChange={value => setInfo(prev => ({...prev, openChatURL: value}))}
+      />
+      <TextField
+        label="설명"
+        value={info.description}
+        placeholder="입력해 주세요."
+        onChange={value => setInfo(prev => ({...prev, description: value}))}
+      />
       <Spacer $flex={1} />
       <SingleCTA text={'다음'} onPress={() => setStep(3)} />
     </>
@@ -65,19 +89,29 @@ const Step2 = () => {
 };
 
 const Step3 = () => {
-  const navigation = useNavigation<any>();
   const [step, setStep] = useAtom(stepAtom);
+  const [info, setInfo] = useState({
+    personCount: '',
+    date: '',
+  });
 
   return (
     <>
-      <Header shoBack onBack={() => navigation.pop()} />
+      <Header shoBack onBack={() => setStep(2)} />
       <ProgressBar current={step} max={3} />
       <Title title={'팟의 주제를 알려주세요.'} />
-      <Row $padding={[0, 20]} $gap={16}>
-        <CategoryCard big category={'관광지 탐방'} Icon={TablewareIcon} />
-        <CategoryCard big category={'맛집 탐방'} Icon={TablewareIcon} />
-      </Row>
-
+      <TextField
+        label="인원수"
+        value={info.personCount}
+        placeholder="n명"
+        onChange={value => setInfo(prev => ({...prev, personCount: value}))}
+      />
+      <TextField
+        label="날짜, 시간"
+        value={info.date}
+        placeholder="YYYY.MM.DD.HH.MM"
+        onChange={value => setInfo(prev => ({...prev, date: value}))}
+      />
       <Spacer $flex={1} />
       <SingleCTA text={'다음'} onPress={() => setStep(3)} />
     </>
@@ -85,25 +119,13 @@ const Step3 = () => {
 };
 
 const ProgressBar = ({current, max}: {current: number; max: number}) => {
-  const step = useAtomValue(stepAtom);
-  const animation = useRef(new Animated.Value(step - 1)).current;
-  React.useEffect(() => {
-    Animated.timing(animation, {
-      toValue: current,
-      duration: 300,
-      useNativeDriver: false,
-    }).start();
-  }, [animation, current]);
   return (
     <Wrapper $padding={[12, 20]} $fill>
       <Container>
         <Progress
           style={[
             {
-              width: animation.interpolate({
-                inputRange: [0, max],
-                outputRange: ['0%', '100%'],
-              }),
+              width: `${(current / max) * 100}%`,
             },
           ]}
         />
