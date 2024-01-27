@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import TestScreen from '@screens/TestScreen.tsx';
-import {useNavigation} from '@react-navigation/native';
-import {useTheme} from 'styled-components/native';
-import {BottomTabBar} from '@components/layout';
-import {HomeIcon, TripIcon, PersonIcon} from '@components/icons/bottom-tab';
+import {HomeIcon, PersonIcon, TripIcon} from '@components/icons/bottom-tab';
 import MenuIcon from '@components/icons/bottom-tab/MenuIcon.tsx';
+import {BottomTabBar} from '@components/layout';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useNavigation} from '@react-navigation/native';
+import TestScreen from '@screens/TestScreen.tsx';
 import {HomeScreen} from '@screens/bottom-tab';
+import React, {useEffect} from 'react';
+import {useTheme} from 'styled-components/native';
+import PodRoundupNavigation from './PodRoundupNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -44,7 +45,7 @@ const BottomNavigation = () => {
       />
       <Tab.Screen
         name="Pod"
-        component={TestScreen}
+        component={PodRoundupNavigation}
         options={{
           tabBarLabel: '팟 모집',
           tabBarIcon: ({focused}) => <PersonIcon selected={focused} />,
