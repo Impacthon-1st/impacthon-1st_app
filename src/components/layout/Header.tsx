@@ -34,9 +34,9 @@ const Header = ({title, shoBack, onBack, children}: HeaderProps) => {
               />
             </Pressable>
           )}
-          <Typography.Headline $color={colors.gray.body}>
+          <Typography.Body $color={colors.gray.body} $emphasized>
             {title}
-          </Typography.Headline>
+          </Typography.Body>
         </Row>
         <Row $alignItems={'center'} $gap={8}>
           {children}
