@@ -10,6 +10,8 @@ import {atom, useAtom, useAtomValue} from 'jotai';
 import React, {useState} from 'react';
 import {Animated} from 'react-native';
 import styled from 'styled-components/native';
+import {useMutation, useQueryClient} from '@tanstack/react-query';
+import {createTestPod} from '@lib/api/pod.ts';
 
 const stepAtom = atom(1);
 
@@ -34,7 +36,12 @@ const Step1 = () => {
       <ProgressBar current={step} max={3} />
       <Title title={'팟의 주제를 알려주세요.'} />
       <Row $padding={[0, 20]} $gap={16}>
-        <CategoryCard big category={'관광지 탐방'} Icon={TablewareIcon} />
+        <CategoryCard
+          big
+          category={'관광지 탐방'}
+          Icon={TablewareIcon}
+          selected={true}
+        />
         <CategoryCard big category={'맛집 탐방'} Icon={TablewareIcon} />
       </Row>
 
@@ -94,7 +101,45 @@ const Step3 = () => {
     personCount: '',
     date: '',
   });
-
+  const queryClient = useQueryClient();
+  const mutation = useMutation({
+    mutationFn: (newPod: any) => createTestPod(),
+    onMutate: async () => {
+      await queryClient.cancelQueries({queryKey: ['pods']});
+      const previousPods = queryClient.getQueryData(['pods']);
+      console.log('onMutate');
+      queryClient.setQueryData(['pods'], (old: any) => {
+        partyMemberList: [
+          ...old.partyMemberList,
+          {
+            partyId: 6,
+            visitPlaceName: 'test',
+            visitPlaceXPoint: 0.0,
+            visitPlaceYPoint: 0.0,
+            count: 1,
+            partyMemberCount: 5,
+            profileImageUrl:
+              'https://jobis-store.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202024-01-23%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%207.31.13.png',
+            username: 'test',
+            gender: 'MALE',
+            meetAt: '2025-01-28T00:28:35',
+            title: 'test',
+            content: 'test',
+          },
+        ];
+      });
+      return {previousPods};
+    },
+    onError: (error, newPod, context) => {
+      console.log(error);
+      queryClient.setQueryData(['pods'], context?.previousPods);
+    },
+    onSettled: () => {
+      console.log('onSettled');
+      queryClient?.invalidateQueries({queryKey: ['pods']});
+    },
+  });
+  const navigation = useNavigation<any>();
   return (
     <>
       <Header shoBack onBack={() => setStep(2)} />
@@ -109,15 +154,27 @@ const Step3 = () => {
       <TextField
         label="날짜, 시간"
         value={info.date}
-        placeholder="YYYY.MM.DD.HH.MM"
+        placeholder="MM.DD.HH.MM"
         onChange={value => setInfo(prev => ({...prev, date: value}))}
       />
       <Spacer $flex={1} />
-      <SingleCTA text={'다음'} onPress={() => setStep(3)} />
+      <SingleCTA
+        text={'다음'}
+        onPress={() => {
+          // mutation.mutate();
+          createTestPod()
+            .then(() => {
+              console.log('createTestPod');
+            })
+            .catch(e => {
+              console.log(e);
+            });
+          navigation.pop();
+        }}
+      />
     </>
   );
 };
-
 const ProgressBar = ({current, max}: {current: number; max: number}) => {
   return (
     <Wrapper $padding={[12, 20]} $fill>

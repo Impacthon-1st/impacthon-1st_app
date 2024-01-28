@@ -5,6 +5,7 @@ import {View} from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import usePods from '@hooks/usePods.tsx';
 import CustomMarker from '@components/common/CustomMarker.tsx';
+import {useNavigation} from '@react-navigation/native';
 
 const data = [
   {
@@ -29,6 +30,7 @@ const data = [
 
 const MapScreen = () => {
   const location = useLocation();
+  const navigation = useNavigation<any>();
   const {pods} = usePods();
   return (
     <View style={{flex: 1, width: '100%'}}>
@@ -58,7 +60,11 @@ const MapScreen = () => {
         </MapView>
         // </Suspense>
       )}
-      <PlusButton />
+      <PlusButton
+        onPress={() => {
+          navigation.navigate('CreatePodScreen');
+        }}
+      />
     </View>
   );
 };

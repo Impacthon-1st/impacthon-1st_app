@@ -1,10 +1,10 @@
-import PlusButton from '@components/common/button/PlusButton';
 import FindPodItem from '@components/common/pod/FindPodItem';
 import {SafeAreaView} from '@components/custom';
 import {Header} from '@components/layout';
 import PotRoundupHeader from '@components/layout/PodRoundupHeader';
 import React from 'react';
 import usePods from '@hooks/usePods.tsx';
+import {FlatList} from 'react-native';
 
 const FIND_PODS_ITEMS = [
   {
@@ -40,25 +40,30 @@ const FIND_PODS_ITEMS = [
 ];
 
 const FindPodScreen = () => {
-  const {pods} = usePods();
+  const {pods, refetch} = usePods();
   return (
     <SafeAreaView>
       <Header title="팟모집" />
       <PotRoundupHeader />
-      {pods?.map((pod: any) => (
-        <FindPodItem
-          key={pod.partyId}
-          name={pod.content}
-          title={pod.visitPlaceName}
-          profile={pod.profileImageUrl}
-          currentPersonCount={pod.partyMemberCount}
-          max={pod.count}
-          id={pod.partyId}
-          category={'관광지 탐방'}
-          location={(pod.visitPlaceXPoint, pod.visitPlaceYPoint)}
-        />
-      ))}
-      <PlusButton />
+      <FlatList
+        onRefresh={refetch}
+        refreshing={false}
+        data={pods}
+        renderItem={({item: pod}) => (
+          <FindPodItem
+            key={pod.partyId}
+            name={pod.content}
+            title={pod.visitPlaceName}
+            profile={pod.profileImageUrl}
+            currentPersonCount={pod.partyMemberCount}
+            max={pod.count}
+            id={pod.partyId}
+            category={'관광지 탐방'}
+            location={(pod.visitPlaceXPoint, pod.visitPlaceYPoint)}
+          />
+        )}
+      />
+      {/*<PlusButton />*/}
     </SafeAreaView>
   );
 };

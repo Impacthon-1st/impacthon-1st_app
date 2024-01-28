@@ -1,6 +1,6 @@
 import {Row} from '@components/atomic';
 import React from 'react';
-import {View} from 'react-native';
+import {Alert, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import styled from 'styled-components/native';
 
@@ -11,19 +11,32 @@ interface Props {
 }
 
 const RequestPodItem = (item: Props) => {
+  const [isAccept, setIsAccept] = React.useState(false);
   return (
-    <Item key={item.id}>
-      <Row $alignItems="center" $justifyContent="space-between" $gap={16}>
-        <Row $alignItems="center" $gap={8}>
-          <Profile src={item.profile} alt="프로필" />
-          <View>
-            <Name>{item.name}</Name>
-            <Message>팟 요청이 왔어요.</Message>
-          </View>
-        </Row>
+    !isAccept && (
+      <Item
+        key={item.id}
+        onPress={() => {
+          Alert.alert('팟 참가 신청', '수락하시겠습니까?', [
+            {
+              text: '거절',
+              onPress: () => console.log('Cancel Pressed'),
+              style: 'cancel',
+            },
+            {text: '수락', onPress: () => setIsAccept(true)},
+          ]);
+        }}>
+        <Row $alignItems="center" $justifyContent="space-between" $gap={16}>
+          <Row $alignItems="center" $gap={8}>
+            <Profile src={item.profile} alt="프로필" />
+            <View>
+              <Name>{item.name}</Name>
+              <Message>팟 요청이 왔어요.</Message>
+            </View>
+          </Row>
 
-        <SvgXml
-          xml={`<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <SvgXml
+            xml={`<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="mask0_179_708" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
 <rect width="24" height="24" fill="#D9D9D9"/>
 </mask>
@@ -32,15 +45,16 @@ const RequestPodItem = (item: Props) => {
 </g>
 </svg>
 `}
-        />
-      </Row>
-    </Item>
+          />
+        </Row>
+      </Item>
+    )
   );
 };
 
 export default RequestPodItem;
 
-const Item = styled.View`
+const Item = styled.TouchableOpacity`
   width: 100%;
   padding: 8px 20px;
   border-bottom-width: 1px;

@@ -4,11 +4,12 @@ import styled, {useTheme} from 'styled-components/native';
 import {Pressable} from '@components/custom';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-const PlusButton = () => {
+const PlusButton = ({onPress}: {onPress?: () => void}) => {
   const {colors} = useTheme();
   const {bottom} = useSafeAreaInsets();
   return (
     <StyledPressable
+      onPress={onPress}
       style={[
         {
           bottom: bottom + 80,

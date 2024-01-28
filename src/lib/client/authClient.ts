@@ -12,7 +12,6 @@ const authClient = axios.create({
 authClient.interceptors.request.use(
   async config => {
     const token = await AsyncStorage.getItem('access');
-    console.log(token, '---------------------');
     config.headers.Authorization = `Bearer ${token}`;
     return config;
   },

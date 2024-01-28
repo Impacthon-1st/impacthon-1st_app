@@ -1,9 +1,10 @@
 import {Column, Row} from '@components/atomic';
 import Typography from '@components/typography';
 import React from 'react';
-import {View} from 'react-native';
+import {Alert, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import styled, {useTheme} from 'styled-components/native';
+import {requestPod} from '@lib/api/pod.ts';
 
 interface Props {
   id: number;
@@ -20,7 +21,17 @@ const FindPodItem = (item: Props) => {
   const {colors} = useTheme();
 
   return (
-    <Item>
+    <Item
+      onPress={() => {
+        Alert.alert('팟 참가', '이 팟에 참가하시겠습니까?', [
+          {
+            text: '취소',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          {text: '확인', onPress: () => requestPod(item.id)},
+        ]);
+      }}>
       <Row $alignItems="center" $gap={8}>
         <Profile src={item.profile} alt="프로필" />
         <View>
@@ -116,10 +127,9 @@ const FindPodItem = (item: Props) => {
     </Item>
   );
 };
-
 export default FindPodItem;
 
-const Item = styled.View`
+const Item = styled.TouchableOpacity`
   width: 100%;
   padding: 8px 20px;
   display: flex;

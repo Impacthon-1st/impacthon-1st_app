@@ -1,38 +1,37 @@
-import PlusButton from '@components/common/button/PlusButton';
 import RequestPodItem from '@components/common/pod/RequestPodItem';
 import {SafeAreaView} from '@components/custom';
 import {Header} from '@components/layout';
 import PotRoundupHeader from '@components/layout/PodRoundupHeader';
 import React from 'react';
-import styled from 'styled-components/native';
 import usePodRequests from '@hooks/usePodRequests.tsx';
-
-const REQUEST_PODS_ITEMS = [
-  {id: 0, profile: '', name: '박상현'},
-  {id: 1, profile: '', name: '이명재'},
-  {id: 2, profile: '', name: '길근우'},
-];
+import {FlatList} from 'react-native';
 
 const RequestPodScreen = () => {
-  const {podRequests} = usePodRequests();
+  const {podRequests, refetch} = usePodRequests();
   console.log(podRequests);
   return (
     <SafeAreaView>
       <Header title="팟모집" />
       <PotRoundupHeader />
-      <Container>
-        {REQUEST_PODS_ITEMS.map(item => (
-          <RequestPodItem key={item.id} {...item} />
-        ))}
-      </Container>
-      <PlusButton />
+      <FlatList
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
+        onRefresh={refetch}
+        refreshing={false}
+        data={podRequests}
+        renderItem={({item: request}) => (
+          <RequestPodItem
+            id={request.partyMemberId}
+            profile={request.profileImageUrl}
+            name={request.username}
+          />
+        )}
+      />
+      {/*<PlusButton />*/}
     </SafeAreaView>
   );
 };
 
 export default RequestPodScreen;
-
-const Container = styled.ScrollView`
-  width: 100%;
-  height: 100%;
-`;

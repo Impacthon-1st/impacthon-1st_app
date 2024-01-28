@@ -8,6 +8,10 @@ import {ThemeProvider} from 'styled-components';
 import {Provider} from 'jotai';
 import Geolocation from '@react-native-community/geolocation';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import styled, {useTheme} from 'styled-components/native';
+import {Column, Row} from '@components/atomic';
+import Typography from '@components/typography';
+import {Pressable} from '@components/custom';
 
 const queryClient = new QueryClient();
 
